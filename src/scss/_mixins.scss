@@ -1,0 +1,13 @@
+// _mixins.scss
+@mixin btn($color: #000, $bg-color: $light-gray) {
+    color: $color;
+    background-color: $bg-color;
+    box-shadow: 0 2px 6px rgba(#000, 0.12);
+    transition: all 250ms ease;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 4px 12px rgba(#000, 0.20);
+        @content;
+    }
+}
