@@ -11,11 +11,16 @@ $version: 1;
 @import "./functions";
 @import "./mixins";
 @import "./reset";
+@import "./utils";
+@import "./typography";
 
 // LAYOUT
+@import "./layout";
 
 // COMPONENTS
+@import "./navbar";
 
 // PAGES
+@import "./page";
 
 // THEMES

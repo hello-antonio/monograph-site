@@ -35,6 +35,7 @@
     },
     "homepage": "https://github.com/thecalicoder/repo-name#readme",
     "dependencies": {
+        "navbar.js": "^1.0.7",
         "parcel": "^1.12.3"
     }
 }

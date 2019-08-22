@@ -1,0 +1,96 @@
+// _page.scss
+.cta {
+    &__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    &__content,
+    &__img-hero {
+        width: 100%;
+        display: inline-block;
+        margin: 0 0 $space-extra;
+    }
+
+    &__content {
+        order: 2;
+    }
+
+    &__img-hero {
+        order: 1;
+
+        img {
+            margin-left: 11%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    @media (min-width:rem(1200)) {
+
+        &__content,
+        &__img-hero {
+            width: 48%;
+        }
+
+        @supports (display: flex) {
+
+            &__content,
+            &__img-hero {
+                flex: 1 1 auto;
+                order: 1;
+            }
+
+            &__content {
+                width: 40%;
+            }
+
+            &__img-hero {
+                width: 55%;
+
+                img {
+                    object-fit: contain;
+                    margin-left: 30%;
+                }
+            }
+        }
+    }
+
+}
+
+// BUTTONS
+.cta__btn {
+    text-transform: uppercase;
+    font-family: $display-font, sans-serif;
+    letter-spacing: 1px;
+    font-size: rem(14);
+    color: $grayishBlue;
+
+    @media (min-width:rem(768)) {
+        font-size: 1rem;
+    }
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    padding: $space-s $space-l;
+    min-height: rem(48);
+    text-transform: uppercase;
+    font-size: inherit;
+    vertical-align: middle;
+    font-family: $display-font, sans-serif;
+    line-height: 2;
+
+    &--primary {
+        @include btn($white, $red) {
+            background-color: lighten($red, 5);
+        }
+
+        border-radius: 3px;
+        margin-right: $space-s;
+        font-weight: $bold;
+    }
+}

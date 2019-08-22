@@ -1,0 +1,27 @@
+// _utils.scss
+// Screen reader visible.
+.sr-visible {
+    border: 0;
+    clip: rect(1px 1px 1px 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    // And visually to sighted users.
+    &.sr-link-focusable:focus,
+    &.sr-link-focusable:active {
+        clip: auto;
+        height: auto;
+        margin: auto;
+        overflow: visible;
+        position: fixed;
+        width: rem(320);
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+    }
+}

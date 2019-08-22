@@ -9,8 +9,13 @@ $base: 18;
 // Colours
 
 // Theme Primary
+$red: hsl(0, 100%, 68%);
 
-// Accents/Tints
+// Neutral/Accents/Tints
+$veryDarkBlue: hsl(230, 29%, 20%);
+$darkGrayishBlue: hsl(230, 11%, 40%);
+$grayishBlue: hsl(231, 7%, 65%);
+$lightGrayishBlue: hsl(207, 33%, 95%);
 
 // B&W Greys
 $white: #fff;
@@ -24,7 +29,8 @@ $gray-10: darken($white, 10);
 $gray-5: darken($white, 5);
 
 // Fonts
-$display-font: "Heebo";
+$display-font: "Barlow Condensed";
+$body-font: "Barlow";
 
 // Weights
 $thin: 100;
@@ -46,4 +52,4 @@ $space-extra: 3rem;
 $space-super: 6rem;
 
 // Container
-$max-width: 1120px;
+$max-width: 1112;

@@ -1,0 +1,49 @@
+// _typography.scss
+
+body {
+    color: $darkGrayishBlue;
+}
+
+h1,
+h2 {
+    font-family: $display-font, sans-serif;
+    color: $veryDarkBlue;
+    margin: 0 0 $space-xl;
+}
+
+h1 {
+    font-size: rem(64/1.75);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+p {
+    max-width: rem(280);
+    margin: 0 0 $space-xl;
+}
+
+.overline {
+    margin: 0 0 $space-m;
+    text-transform: uppercase;
+    font-size: rem(16);
+    color: $grayishBlue;
+    letter-spacing: 5px;
+    font-family: $display-font, sans-serif;
+
+    &__new {
+        background-color: $veryDarkBlue;
+        color: $white;
+        border-radius: rem(24);
+        padding: 0.1rem $space-l;
+        font-weight: $bold;
+        text-align: center;
+        display: inline-block;
+        letter-spacing: normal;
+    }
+}
+
+@media (min-width: rem(768)) {
+    h1 {
+        font-size: rem(64);
+    }
+}

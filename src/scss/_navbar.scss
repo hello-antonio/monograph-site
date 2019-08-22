@@ -1,0 +1,222 @@
+// _navbar.scss
+
+// IF-NO-JS
+.navbar {
+    &__toggle {
+        display: none;
+    }
+
+    &__menu {
+        margin: $space-s 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+            margin: $space-s 0;
+            display: block;
+
+            &[aria-hidden] {
+                display: none;
+                margin: $space-s 0;
+            }
+        }
+
+        a {
+            font-size: rem(12);
+            text-transform: uppercase;
+            color: $veryDarkBlue;
+            font-family: $display-font, sans-serif;
+            font-weight: $bold;
+            padding: $space-m 0;
+            display: inline-block;
+            transition: all 250ms ease;
+
+            &:hover {
+                text-decoration-line: underline;
+            }
+        }
+
+        a.btn {
+            width: 100%;
+            color: $grayishBlue;
+        }
+
+    }
+
+    &__divider {
+        border-top: thin solid $grayishBlue;
+        display: block;
+    }
+
+    @media (min-width: rem(768)) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__menu {
+
+            li {
+                display: inline-block;
+                margin: 0 $space-l 0;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &[aria-hidden] {
+                    display: inline-block;
+                }
+            }
+
+            a {
+                font-size: rem(16);
+            }
+
+            a.btn {
+                border-top: none;
+            }
+        }
+
+        &__divider {
+            border-top: none;
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background-color: $grayishBlue;
+            vertical-align: middle;
+        }
+    }
+}
+
+// IF-JS
+
+$size: 32;
+$transition: all 350ms ease-in-out 10ms;
+
+.js {
+    .navbar {
+        position: relative;
+
+        @media (max-width:rem(767)) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            &__title,
+            &__toggle {
+                display: inline-block;
+                width: 48%;
+            }
+
+            &__toggle {
+                text-align: right;
+            }
+
+            &__button {
+                position: relative;
+                background-color: transparent;
+                border: none;
+                height: rem($size);
+                width: rem($size);
+                outline: none;
+
+                %icon {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    left: 0;
+                    right: 0;
+                    background-color: $veryDarkBlue;
+                    transition: $transition;
+                }
+
+                &__inner {
+                    @extend %icon;
+                    top: 3px;
+
+                    &:after,
+                    &:before {
+                        @extend %icon;
+                        opacity: 1;
+                    }
+
+                    &::before {
+                        top: rem(($size / 3));
+                    }
+
+                    &::after {
+                        top: rem(($size / 1.5));
+                    }
+                }
+            }
+
+            &__menu {
+                display: block;
+                width: 100%;
+                padding: $space-s $space-xl;
+                text-align: center;
+                background-color: #fff;
+                box-shadow: 0 5px 26px rgba($veryDarkBlue, 0.26);
+                border-radius: 4px;
+                position: absolute;
+                top: rem(100);
+                left: 0;
+                right: 0;
+                visibility: hidden;
+                opacity: 0;
+                z-index: -999;
+                pointer-events: none;
+                transform: translateY(-$space-xl) scale(0.9);
+                transition: $transition;
+
+                li {
+                    &[aria-hidden] {
+                        display: block;
+                    }
+                }
+
+                a {
+                    font-size: rem(16);
+                }
+            }
+        }
+    }
+}
+
+.js-toggle-menu {
+
+    @media (max-width:rem(767)) {
+        .navbar {
+            &__menu {
+                transform: translateY(-$space-l) scale(1);
+                visibility: visible;
+                opacity: 1;
+                z-index: 999;
+                pointer-events: all;
+            }
+
+            &__button {
+
+                &__inner {
+                    transform: translate3d(0, 10px, 0) rotate(45deg);
+
+                    &::before {
+                        opacity: 0;
+                    }
+
+                    &::after {
+                        transform: translate3d(0, -20px, 0) rotate(-90deg);
+                    }
+                }
+            }
+        }
+    }
+}

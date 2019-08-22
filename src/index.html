@@ -5,26 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="Web Starter" />
-  <title>Web Starter</title>
+  <meta name="description" content="Powerful insights into your team
+  Project planning and time tracking for agile teams" />
+  <title>NEW Monograph Dashboard</title>
   <!-- Check if JS Enable -->
-  <!-- <script>
-        (function () {document.documentElement.className = "js"})();
-    </script> -->
+  <script>
+    (function () {
+      document.documentElement.className = "js"
+    })();
+  </script>
   <!-- <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <!-- Google Fonts w/ Preload-->
-  <link href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap" rel="preload" as="style"
-    onload="this.rel = 'stylesheet'" />
-  <link href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed:400,700&display=swap" rel="preload"
+    as="style" onload="this.rel = 'stylesheet'" />
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed:400,700&display=swap" rel="stylesheet" />
   <!-- Styles w/ Preload-->
   <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="./scss/main.scss" />
   <link rel="stylesheet" href="./scss/main.scss" />
   <style>
     .attribution {
-      font-size: 11px;
+      font-size: 0.75rem;
       text-align: center;
+      margin: 0 auto 1.5rem;
     }
 
     .attribution a {
@@ -34,34 +38,56 @@
 </head>
 
 <body>
-  <header>
+  <header id="js-navbar">
     <!-- Navbar -->
-    <nav></nav>
+    <nav class="navbar container">
+      <a href="#maincontent" class="sr-visible sr-link-focusable">Skip to content</a>
+      <div class="navbar__title">
+        <img src="./images/logo.svg" alt="Brand logo" aria-hidden="true">
+      </div>
+      <div class="navbar__toggle">
+        <button class="navbar__button" id="js-toggle-btn" aria-expanded="false" aria-label="Open Menu">
+          <div class="navbar__button__inner"></div>
+        </button>
+      </div>
+      <ul id="js-menu" class="navbar__menu" role="menu">
+        <li role="none"><a role="menuitem" href="#">Product</a></li>
+        <li role="none"><a role="menuitem" href="#">Features</a></li>
+        <li role="none"><a role="menuitem" href="#">Pricing</a></li>
+        <li aria-hidden="true" role="none"><i class="navbar__divider"></i></li>
+        <li role="none"><a role="menuitem" href="#" class="btn">Login</a></li>
+      </ul>
+    </nav>
   </header>
   <!-- Main Content / Sections -->
-  <main id="maincontent">
+  <main id="maincontent" class="container cta" role="main">
     <!-- Hero header / Homepage -->
+    <div class="cta__wrapper">
+      <div class="cta__content">
+        <div class="overline" tabindex="0">
+          <strong class="overline__new">New</strong>
+          <span>
+            Monograph Dashboard
+          </span>
+        </div>
+        <h1 tabindex="0">Powerful insights into your team</h1>
+        <p>Project planning and time tracking for agile teams</p>
+        <div class="cta__btn">
+          <a href="#" class="btn btn--primary">Schedule a demo</a> to see a live preview
+        </div>
+      </div>
+      <div class="cta__img-hero">
+        <img src="./images/illustration-devices.svg" alt="illustration-devices" aria-hidden="true">
+      </div>
+    </div>
   </main>
   <!-- Main Footer -->
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/thecalicoder" target="_blank">thecalicoder</a>.
     </p>
   </footer>
-  Product
-  Features
-  Pricing
-  Login
-
-  New
-  Monograph Dashboard
-
-  Powerful insights into your team
-  Project planning and time tracking for agile teams
-
-  Schedule a demo
-  to see a live preview
   <script defer src="./js/app.js"></script>
 </body>
 
